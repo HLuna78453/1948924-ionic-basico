@@ -1,3 +1,12 @@
 <ion-list *ngFor="let alumno of alumnos">
-  <ion-item>Hola, {{alumno}}</ion-item>
+  <ion-item-sliding>
+    <ion-item>Hola, {{alumno}}</ion-item>
+
+    <ion-item-options>
+      <ion-item-option>Favoritos</ion-item-option>
+      <ion-item-option color="danger" id="accionEliminarAlTocar">Eliminar</ion-item-option>
+
+      <ion-action-sheet trigger="accionEliminarAlTocar" header="¿Seguro que quiere eliminar?" [buttons]="accionEliminar"></ion-action-sheet>
+    </ion-item-options>
+  </ion-item-sliding>
 </ion-list>
