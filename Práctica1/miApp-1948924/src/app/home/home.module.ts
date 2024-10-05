@@ -12,8 +12,7 @@ import { ListaAlumnosComponent } from "../lista-alumnos/lista-alumnos.component"
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
-    ListaAlumnosComponent
+    HomePageRoutingModule
 ],
   declarations: []
 })

@@ -5,9 +5,7 @@ import { IonHeader } from '@ionic/angular';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  standalone: true,
-  imports: [ListaAlumnosComponent, IonHeader]
+  styleUrls: ['home.page.scss']
 })
 export class HomePage {
 
