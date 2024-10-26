@@ -1,13 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 import { NgFor } from '@angular/common';
-import { IonList, IonItem, IonItemSliding, IonItemOptions, IonItemOption, IonActionSheet } from "@ionic/angular/standalone";
+import { 
+  IonList, IonItem, IonItemSliding, IonItemOptions, IonItemOption, IonActionSheet, 
+  IonInput, IonButton, IonLabel, IonCheckbox 
+} from "@ionic/angular/standalone";
+import { alumno } from '../alumno.model';
 
 @Component({
   selector: 'app-lista-alumnos',
   templateUrl: './lista-alumnos.component.html',
   styleUrls: ['./lista-alumnos.component.scss'],
-  imports:[NgFor, IonList, IonItem, IonItemSliding, IonItemOptions, IonItemOption, IonActionSheet],
+  imports:[
+    NgFor, IonList, IonItem, IonItemSliding, IonItemOptions, IonItemOption, 
+    IonActionSheet, IonInput, IonButton, IonLabel, IonCheckbox
+  ],
   standalone: true
 })
 export class ListaAlumnosComponent  implements OnInit {
@@ -15,8 +22,6 @@ export class ListaAlumnosComponent  implements OnInit {
   constructor() { }
 
   ngOnInit() {}
-
-  alumnos : any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Baraba", "Georgina", "Kevin"];
 
   public accionEliminar = [
     {
@@ -34,4 +39,23 @@ export class ListaAlumnosComponent  implements OnInit {
       },
     },
   ];
+
+  alumno: alumno = {
+    nombre: '',
+    presente: false
+  }
+
+  agregarAlumno(): void {
+    this.alumno = {
+      nombre: '',
+      presente: false
+    };
+
+    this.alumnos.push(this.alumno);
+
+    console.log(this.alumnos);
+  }
+
+  alumnos : alumno[] = [];
+
 }

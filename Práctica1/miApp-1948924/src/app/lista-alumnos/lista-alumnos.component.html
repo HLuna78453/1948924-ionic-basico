@@ -1,12 +1,10 @@
-<ion-list *ngFor="let alumno of alumnos">
-  <ion-item-sliding>
-    <ion-item>Hola, {{alumno}}</ion-item>
-
-    <ion-item-options>
-      <ion-item-option>Favoritos</ion-item-option>
-      <ion-item-option color="danger" id="accionEliminarAlTocar">Eliminar</ion-item-option>
-
-      <ion-action-sheet trigger="accionEliminarAlTocar" header="¿Seguro que quiere eliminar?" [buttons]="accionEliminar"></ion-action-sheet>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
+<form (ngSubmit)="agregarAlumno()">
+  <ion-label>Nombre alumno:</ion-label>
+  <ion-input required [value]="alumno.nombre" placeholder="Ejemplo: Juanita" name="nombre"></ion-input>
+  <ion-label>
+    <ion-checkbox [value]="alumno.presente" name="presente>"></ion-checkbox> Presente 
+  </ion-label>
+  <div>
+    <ion-button type="submit">Agregar</ion-button>
+  </div>
+</form>
