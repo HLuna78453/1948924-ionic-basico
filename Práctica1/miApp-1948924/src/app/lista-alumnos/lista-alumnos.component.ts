@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { 
   IonList, IonItem, IonItemSliding, IonItemOptions, IonItemOption, IonActionSheet, 
-  IonInput, IonButton, IonLabel, IonCheckbox 
+  IonInput, IonButton, IonLabel, IonCheckbox
 } from "@ionic/angular/standalone";
 import { alumno } from '../alumno.model';
 
@@ -45,6 +45,8 @@ export class ListaAlumnosComponent  implements OnInit {
     presente: false
   }
 
+  alumnos : alumno[] = [];
+
   agregarAlumno(): void {
     this.alumno = {
       nombre: '',
@@ -55,7 +57,4 @@ export class ListaAlumnosComponent  implements OnInit {
 
     console.log(this.alumnos);
   }
-
-  alumnos : alumno[] = [];
-
 }
